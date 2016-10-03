@@ -5,10 +5,10 @@ To download a copy of the demo [go here](https://drive.google.com/a/affectiva.co
 
 # Setup project in Unity
 git clone https://www.github.com/Affectiva/UnityChan.git 
-Open the cloned repository in unity. File -> Open Scenes -> ActionCheck . Import the Affdex asset (download it from the getting started section of the [developer portal](http://developer.affectiva.com/unity/)).
+Open the cloned repository in Unity. File -> Open Scenes -> ActionCheck. Import the Affdex asset (download it from the getting started section of the [developer portal](http://developer.affectiva.com/unity/)).
 
 # Affdex Unity Asset Documentation :
-Instructions on how to emotion enable a game (with examples) is here:
+Instructions on how to emotion enable a game (with examples) are here:
 http://developer.affectiva.com/unity/
 
 # Unity-Chan License
