@@ -51,11 +51,11 @@ public class FaceUpdate : MonoBehaviour
             anim.SetLayerWeight (1, current);
         } else if (playerEmotions.currentSmile == dominantEmotion) {
             if (playerEmotions.currentSmile > 60) {
-                Debug.Log ("smile2@unitychan");
-                anim.CrossFade ("smile2@unitychan", 0.1f);
-            } else {
                 Debug.Log ("smile1@unitychan");
                 anim.CrossFade ("smile1@unitychan", 0.1f);
+            } else {
+                Debug.Log ("smile2@unitychan");
+                anim.CrossFade ("smile2@unitychan", 0.1f);
             }
         } else if (playerEmotions.currentAnger == dominantEmotion) {
             if (playerEmotions.currentAnger > 40) {
