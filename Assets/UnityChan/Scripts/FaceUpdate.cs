@@ -39,13 +39,13 @@ public class FaceUpdate : MonoBehaviour
 		}
 
         anim.SetLayerWeight (1, 1);
-        float dominantEmotion = Mathf.Max (playerEmotions.currentAnger, playerEmotions.currentDisgust, playerEmotions.currentEyeClosure,
-                                    playerEmotions.currentSmile, playerEmotions.currentSurprise, playerEmotions.currentValence);
+        float dominantEmotion = Mathf.Max (playerEmotions.currentAnger, playerEmotions.currentSadness, playerEmotions.currentEyeClosure,
+                                    playerEmotions.currentJoy, playerEmotions.currentSurprise);
 
         if (dominantEmotion <= 5) {
             anim.SetLayerWeight (1, current);
-        } else if (playerEmotions.currentSmile == dominantEmotion) {
-            if (playerEmotions.currentSmile > 60) {
+        } else if (playerEmotions.currentJoy == dominantEmotion) {
+            if (playerEmotions.currentJoy > 60) {
                 Debug.Log ("smile1@unitychan");
                 anim.CrossFade ("smile1@unitychan", 0.1f);
             } else {
@@ -63,17 +63,14 @@ public class FaceUpdate : MonoBehaviour
         } else if (playerEmotions.currentSurprise == dominantEmotion) {
             Debug.Log ("sap@unitychan");
             anim.CrossFade ("sap@unitychan", 0.1f);
-        } else if (playerEmotions.currentDisgust == dominantEmotion) {
-            if (playerEmotions.currentDisgust > 50) {
+        } else if (playerEmotions.currentSadness == dominantEmotion) {
+            if (playerEmotions.currentSadness > 50) {
                 Debug.Log ("disstract1@unitychan");
                 anim.CrossFade ("disstract1@unitychan", 0.1f);
             } else {
                 Debug.Log ("disstract2@unitychan");
                 anim.CrossFade ("disstract2@unitychan", 0.1f);
             }
-        } else if (playerEmotions.currentValence == dominantEmotion) {
-            Debug.Log ("conf@unitychan");
-            anim.CrossFade ("conf@unitychan", 0.1f);
         } else {
             Debug.Log ("eye_close@unitychan");
             anim.CrossFade ("eye_close@unitychan", 0.1f);

@@ -5,11 +5,10 @@ using System.Collections.Generic;
 
 public class PlayerEmotions : ImageResultsListener
 {
-    public float currentValence;
     public float currentAnger;
     public float currentSurprise;
-    public float currentSmile;
-    public float currentDisgust;
+    public float currentJoy;
+    public float currentSadness;
     public float currentEyeClosure;
     GameObject redWall;
     GameObject greenWall;
@@ -31,11 +30,10 @@ public class PlayerEmotions : ImageResultsListener
     {
         greenWall.SetActive (false);
         redWall.SetActive (true);
-        currentValence = 0;
         currentAnger = 0;
         currentSurprise = 0;
-        currentSmile = 0;
-        currentDisgust = 0;
+        currentJoy = 0;
+        currentSadness = 0;
         currentEyeClosure = 0;
         if (Debug.isDebugBuild) Debug.Log("Lost the face");
     }
@@ -44,11 +42,10 @@ public class PlayerEmotions : ImageResultsListener
     {
         if (faces.Count > 0)
         {
-            faces[0].Emotions.TryGetValue(Emotions.Valence, out currentValence);
             faces[0].Emotions.TryGetValue(Emotions.Anger, out currentAnger);
             faces[0].Emotions.TryGetValue(Emotions.Surprise, out currentSurprise);
-            faces[0].Emotions.TryGetValue(Emotions.Disgust, out currentDisgust);
-            faces[0].Expressions.TryGetValue(Expressions.Smile, out currentSmile);
+            faces[0].Emotions.TryGetValue(Emotions.Sadness, out currentSadness);
+            faces[0].Emotions.TryGetValue(Emotions.Joy, out currentJoy);
             faces[0].Expressions.TryGetValue(Expressions.EyeClosure, out currentEyeClosure);
         }
     }
