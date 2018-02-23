@@ -12,6 +12,10 @@ public class PlayerEmotions : ImageResultsListener
     public float currentEyeClosure;
     GameObject redWall;
     GameObject greenWall;
+    public Slider joySlider;
+    public Slider sadnessSlider;
+    public Slider surpriseSlider;
+    public Slider angerSlider;
 
     void Awake()
     {
@@ -47,6 +51,11 @@ public class PlayerEmotions : ImageResultsListener
             faces[0].Emotions.TryGetValue(Emotions.Sadness, out currentSadness);
             faces[0].Emotions.TryGetValue(Emotions.Joy, out currentJoy);
             faces[0].Expressions.TryGetValue(Expressions.EyeClosure, out currentEyeClosure);
+
+            joySlider.value = currentJoy;
+            sadnessSlider.value = currentSadness;
+            surpriseSlider.value = currentSurprise;
+            angerSlider.value = currentAnger;
         }
     }
 }
