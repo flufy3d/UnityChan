@@ -1,7 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Affdex;
+//using Affdex;
 using System.Collections.Generic;
+
+public class ImageResultsListener :MonoBehaviour
+{
+	
+}
+
 
 public class PlayerEmotions : ImageResultsListener
 {
@@ -21,7 +27,28 @@ public class PlayerEmotions : ImageResultsListener
     {
         redWall = GameObject.FindGameObjectWithTag ("RedWall");
         greenWall = GameObject.FindGameObjectWithTag ("GreenWall");
+
+		greenWall.SetActive (true);
+		redWall.SetActive (false);
+
+		currentAnger = 5f;
+		currentSurprise = 5f;
+		currentJoy = 5f;
+		currentSadness = 5f;
+		currentEyeClosure = 5f;
     }
+
+	void Update()
+	{
+		joySlider.value = currentJoy;
+		sadnessSlider.value = currentSadness;
+		surpriseSlider.value = currentSurprise;
+		angerSlider.value = currentAnger;
+	}
+
+
+
+	/*
 
     public override void onFaceFound(float timestamp, int faceId)
     {
@@ -58,4 +85,5 @@ public class PlayerEmotions : ImageResultsListener
             angerSlider.value = currentAnger;
         }
     }
+    */
 }
